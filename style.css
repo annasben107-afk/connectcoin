@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #fff;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 60px);
+    grid-template-rows: repeat(6, 60px);
+    background-color: #0077be;
+    border: 3px solid #005a8d;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cell .piece {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px; /* Start above the cell */
+    left: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+.cell .piece.player1 {
+    background: radial-gradient(circle at center, #ff7b7b, #ff0000);
+}
+
+.cell .piece.player2 {
+    background: radial-gradient(circle at center, #ffff7b, #ffea00);
+}
+
+.cell .piece.drop {
+    top: 0;
+}
+
+#restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #005a8d;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
